@@ -4,7 +4,6 @@ import screen
 import cv2
 import numpy as np
 import ark
-import polygachas
 
 clickX = 0
 clickY = 0
@@ -265,9 +264,6 @@ while(True):
 
     ark.bedSpawn("bf_flint1", clickX, clickY)
     addFlint()
-
-    polygachas.loadGacha("bf_gacha1")
-    polygachas.loadGacha("bf_gacha2")
     
     ark.bedSpawn("bf_gp2", clickX, clickY)
     takeGunpowder()
@@ -304,9 +300,6 @@ while(True):
     ark.craft("gunpowder", 20)
     ark.closeInventory()
     ark.accessBed()
-
-    polygachas.loadGacha("bf_gacha3")
-    polygachas.loadGacha("bf_gacha4")
     
     ark.bedSpawn("bf_gp2", clickX, clickY)
     takeGunpowder()
@@ -338,11 +331,9 @@ while(True):
     ark.closeInventory()
     ark.accessBed()
 
-    polygachas.whipCrystals("bf_gachacrystal1")
-    polygachas.whipCrystals("bf_gachacrystal2")
 
     count += 1
     if(count >= 2):
         count = 0
-        ark.bedSpawn("suicide bed", 705, 302)
+        ark.bedSpawn("suicide bed", clickX, clickY)
         time.sleep(25)
